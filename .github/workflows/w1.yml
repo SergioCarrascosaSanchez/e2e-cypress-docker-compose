@@ -8,4 +8,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Execute Docker Compose Cypress
-        run: docker-compose -f docker-compose.test.yaml up --exit-code-from cypress
+        run: |
+              cd ./e2e
+              docker-compose -f docker-compose.test.yaml up --exit-code-from cypress
